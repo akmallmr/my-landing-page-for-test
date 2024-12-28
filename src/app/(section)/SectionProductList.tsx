@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 
 const SectionProductpst = () => {
   const { product } = useProductContext();
-  console.log("product", product);
 
   return (
     <div className="py-10">
@@ -20,7 +19,7 @@ const SectionProductpst = () => {
         >
           <ul className="flex space-x-12">
             {product?.map((item: any) => (
-              <li className="text-lg font-semibold">
+              <li key={item.id} className="text-lg font-semibold">
                 {item?.name || "Product"}
               </li>
             ))}

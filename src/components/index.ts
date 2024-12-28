@@ -1,3 +1,5 @@
 import Header from "./Header";
+import MouseTracer from "./MouseTracer";
+import Gap from "./Gap";
 
-export { Header };
+export { Header, MouseTracer, Gap };

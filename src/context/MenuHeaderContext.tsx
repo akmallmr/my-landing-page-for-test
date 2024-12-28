@@ -1,16 +1,7 @@
 "use client";
 
 import React, { createContext, ReactNode, useContext } from "react";
-
-interface MenuProps {
-  key: string;
-  label: string;
-  path: string;
-}
-
-interface MenuHeaderProps {
-  menuHeader: MenuProps[];
-}
+import { MenuHeaderProps } from "./types";
 
 const MenuHeaderContext = createContext<MenuHeaderProps | undefined>(undefined);
 

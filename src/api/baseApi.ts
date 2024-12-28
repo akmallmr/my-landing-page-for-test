@@ -3,7 +3,7 @@ import axios, { AxiosRequestConfig, Method } from "axios";
 // Initial base API reusable
 
 const axiosInstance = axios.create({
-  baseURL: "https://www.giovankov.com/api/",
+  baseURL: process.env.NEXT_PUBLIC_BASE_API,
   timeout: 10000,
   headers: {
     "Content-Type": "application/json",

@@ -10,18 +10,18 @@ export interface MenuHeaderProps {
 
 export interface ProductProps {
   id: string;
-  name: string;
+  name?: string | null;
 }
 
 export interface ImagesProps {
   id: string[];
-  image: string;
+  image?: string | null;
 }
 
 export interface ProductsProps {
   id: string;
-  name: string;
-  image: string;
+  name?: string | null;
+  image?: string | null;
 }
 
 export interface ProductsContextProps {

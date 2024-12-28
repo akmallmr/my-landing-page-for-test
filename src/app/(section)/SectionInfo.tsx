@@ -19,7 +19,7 @@ const SectionInfo = () => {
         <div className="py-20">
           <h1 className="text-4xl font-bold text-white">CartX</h1>
           <p className="text-white">
-            Shop smarter, not harder—discover CartX's exclusive collection.
+            {`Shop smarter, not harder—discover CartX's exclusive collection.`}
           </p>
           <Gap height={50} />
           <p className="text-white text-justify">

@@ -45,7 +45,7 @@ const ProductProvider = ({ children }: { children: ReactNode }) => {
 
         setProduct(combinedResponse);
       }
-    } catch (error) {
+    } catch {
       setProduct(undefined);
     }
   };

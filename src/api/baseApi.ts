@@ -10,20 +10,20 @@ const axiosInstance = axios.create({
   },
 });
 
-interface ApiRequestConfig extends AxiosRequestConfig {
+interface ApiRequestConfig<D = unknown> extends AxiosRequestConfig {
   url: string;
   method?: Method;
-  data?: any;
-  params?: any;
+  data?: D;
+  params?: Record<string, unknown>;
 }
 
-export const baseApi = async <T = any>({
+export const baseApi = async <T = unknown, D = unknown>({
   url,
   method = "GET",
   data,
   params,
   ...restConfig
-}: ApiRequestConfig): Promise<T> => {
+}: ApiRequestConfig<D>): Promise<T> => {
   try {
     const response = await axiosInstance({
       url,

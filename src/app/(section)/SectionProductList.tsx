@@ -1,4 +1,5 @@
 import { useProductContext } from "@/context/ProductContext";
+import { ProductsProps } from "@/context/types";
 import { motion } from "framer-motion";
 
 const SectionProductpst = () => {
@@ -18,7 +19,7 @@ const SectionProductpst = () => {
           }}
         >
           <ul className="flex space-x-12">
-            {product?.map((item: any) => (
+            {product?.map((item: ProductsProps) => (
               <li key={item.id} className="text-lg font-semibold">
                 {item?.name || "Product"}
               </li>

@@ -20,7 +20,9 @@ const ProductContext = createContext<ProductsContextProps | undefined>(
 );
 
 const ProductProvider = ({ children }: { children: ReactNode }) => {
-  const [product, setProduct] = useState<ProductsProps | undefined>(undefined);
+  const [product, setProduct] = useState<ProductsProps[] | undefined>(
+    undefined
+  );
 
   const handleGetProduct = async () => {
     try {

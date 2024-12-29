@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
-import "./globals.css";
-import { Header } from "@/components";
+import { Footer, Header } from "@/components";
 import { MenuHeaderProvider } from "@/context/MenuHeaderContext";
 import { ProductProvider } from "@/context/ProductContext";
+import "./globals.css";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -13,8 +13,8 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "My Landing Page for Test",
-  description: "Landing page for testing edot purposed",
+  title: "CartX - Landing Page",
+  description: "Landing page CartX for testing edot purposed",
 };
 
 export default function RootLayout({
@@ -24,11 +24,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${poppins.variable}  antialiased`}>
+      <body className={`${poppins.variable} antialiased scrollbar-hide`}>
         <ProductProvider>
           <MenuHeaderProvider>
             <Header />
             {children}
+            <Footer />
           </MenuHeaderProvider>
         </ProductProvider>
       </body>

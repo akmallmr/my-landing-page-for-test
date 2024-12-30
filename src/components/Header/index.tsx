@@ -1,11 +1,12 @@
 'use client';
 
 import { useMenuHeaderContext } from '@/context/MenuHeaderContext';
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import React from 'react';
 
 const Header = () => {
   const router = useRouter();
+  const pathname = usePathname();
   const { menuHeader } = useMenuHeaderContext();
 
   return (
@@ -15,7 +16,11 @@ const Header = () => {
       </div>
       <div className='flex flex-row gap-8 text-white'>
         {menuHeader.map((item) => (
-          <div key={item?.key} onClick={() => router?.push(item?.path)} className='cursor-pointer'>
+          <div
+            key={item?.key}
+            onClick={() => router?.push(item?.path)}
+            className={`cursor-pointer ${pathname === item?.path ? 'border-b-2 border-white' : ''}`}
+          >
             <p>{item?.label}</p>
           </div>
         ))}

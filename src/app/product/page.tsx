@@ -11,8 +11,7 @@ const PageProduct = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [filteredItems, setFilteredItems] = useState(product);
   const [previewImage, setPreviewImage] = useState<string | null>(null);
-  console.log('product', product);
-  console.log('filter', filteredItems);
+
   const openPreview = (image: string) => setPreviewImage(image);
 
   const closePreview = () => setPreviewImage(null);
@@ -21,7 +20,6 @@ const PageProduct = () => {
     const value = e.target.value;
     setSearchTerm(value);
 
-    // Filter items based on name
     const filtered = product?.filter(
       (item) => item.name?.toLowerCase().includes(value.toLowerCase()) || !value
     );

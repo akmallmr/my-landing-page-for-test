@@ -8,8 +8,7 @@ import './globals.css';
 const poppins = Poppins({
   variable: '--font-poppins',
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700'], // Specify weights you use (e.g., regular, medium, bold)
-  display: 'swap', // Improves font-loading behavior
+  weight: ['400', '500', '600', '700'],
 });
 
 export const metadata: Metadata = {

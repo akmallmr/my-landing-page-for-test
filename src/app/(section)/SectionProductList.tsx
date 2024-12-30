@@ -1,83 +1,74 @@
-"use client";
+'use client';
 
-import { Gap } from "@/components";
-import { useProductContext } from "@/context/ProductContext";
-import { ProductsProps } from "@/context/types";
-import { motion } from "framer-motion";
-import Image from "next/image";
+import { Gap } from '@/components';
+import { useProductContext } from '@/context/ProductContext';
+import { ProductsProps } from '@/context/types';
+import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 const SectionProductpst = () => {
   const { product } = useProductContext();
 
   return (
-    <div className="py-10">
-      <h1 className="text-2xl text-center font-bold">
-        Featured Products{"     "}
-      </h1>
+    <div className='py-10'>
+      <h1 className='text-2xl text-center font-bold'>Featured Products</h1>
       <Gap height={25} />
-      <div className="relative w-full p-5 overflow-hidden">
+      <div className='relative w-full p-3 overflow-hidden'>
         <motion.div
-          className="flex whitespace-nowrap"
-          animate={{ x: ["100%", "-150%"] }}
+          className='flex whitespace-nowrap'
+          animate={{ x: ['100%', '-100%'] }}
           transition={{
-            duration: 100,
-            ease: "linear",
+            duration: 20,
+            ease: 'linear',
             repeat: Infinity,
           }}
         >
-          <ul className="flex space-x-12">
-            {product?.slice(0, 11).map((item: ProductsProps) => (
+          <ul className='flex space-x-2'>
+            {product?.slice(0, 10).map((item: ProductsProps) => (
               <div
                 key={item.id}
-                className="shadow-lg rounded-md w-52 flex flex-col justify-between"
+                className='shadow-lg rounded-md w-32 flex flex-col justify-between'
               >
                 <Image
-                  alt="product-img"
-                  src={item?.image || "/placeholder-image.jpg"}
+                  alt='product-img'
+                  src={item?.image || '/placeholder-image.jpg'}
                   width={300}
                   height={50}
-                  objectFit="cover"
-                  className="rounded-t-md"
+                  className='rounded-t-md w-52 h-24'
                 />
-                <div className="p-2">
-                  <li className="text-lg font-semibold truncate">
-                    {item?.name || "Product"}
-                  </li>
+                <div className='p-2'>
+                  <li className='text-sm truncate'>{item?.name || 'Product'}</li>
                 </div>
               </div>
             ))}
           </ul>
         </motion.div>
       </div>
-      <Gap height={50} />
-      <div className="relative w-full p-5 overflow-hidden">
+      <div className='relative w-full p-3 overflow-hidden'>
         <motion.div
-          className="flex whitespace-nowrap"
-          animate={{ x: ["-117%", "150%"] }}
+          className='flex whitespace-nowrap'
+          animate={{ x: ['100%', '-100%'] }}
           transition={{
-            duration: 100,
-            ease: "linear",
+            duration: 20,
+            ease: 'linear',
             repeat: Infinity,
           }}
         >
-          <ul className="flex space-x-12">
-            {product?.slice(12, 21).map((item: ProductsProps) => (
+          <ul className='flex space-x-2'>
+            {product?.slice(11, 21).map((item: ProductsProps) => (
               <div
                 key={item.id}
-                className="shadow-lg rounded-md w-52 flex flex-col justify-between"
+                className='shadow-lg rounded-md w-32 flex flex-col justify-between'
               >
                 <Image
-                  alt="product-img"
-                  src={item?.image || "/placeholder-image.jpg"}
+                  alt='product-img'
+                  src={item?.image || '/placeholder-image.jpg'}
                   width={300}
-                  height={100}
-                  objectFit="cover"
-                  className="rounded-t-md"
+                  height={50}
+                  className='rounded-t-md w-52 h-24'
                 />
-                <div className="p-2">
-                  <li className="text-lg font-semibold truncate">
-                    {item?.name || "Product"}
-                  </li>
+                <div className='p-2'>
+                  <li className='text-sm truncate'>{item?.name || 'Product'}</li>
                 </div>
               </div>
             ))}

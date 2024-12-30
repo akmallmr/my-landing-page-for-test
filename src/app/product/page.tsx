@@ -4,12 +4,12 @@ import { Gap } from '@/components';
 import { useProductContext } from '@/context/ProductContext';
 import { ProductsProps } from '@/context/types';
 import Image from 'next/image';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const PageProduct = () => {
   const { product } = useProductContext();
-  const [searchTerm, setSearchTerm] = useState('');
-  const [filteredItems, setFilteredItems] = useState(product);
+  const [searchTerm, setSearchTerm] = useState<string>('');
+  const [filteredItems, setFilteredItems] = useState<ProductsProps[] | undefined>(product);
   const [previewImage, setPreviewImage] = useState<string | null>(null);
 
   const openPreview = (image: string) => setPreviewImage(image);
@@ -25,6 +25,10 @@ const PageProduct = () => {
     );
     setFilteredItems(filtered);
   };
+
+  useEffect(() => {
+    setFilteredItems(product);
+  }, [product]);
 
   return (
     <div className='laptop:mx-80'>

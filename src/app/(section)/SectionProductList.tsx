@@ -31,7 +31,7 @@ const SectionProductpst = () => {
               >
                 <Image
                   alt='product-img'
-                  src={item?.image || '/placeholder-image.jpg'}
+                  src={item?.image || '/no-image.jpg'}
                   width={300}
                   height={50}
                   className='rounded-t-md w-52 h-24'

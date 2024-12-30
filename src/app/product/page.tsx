@@ -53,8 +53,8 @@ const PageProduct = () => {
           >
             <Image
               alt='image-product-list'
-              src={item?.image || '/product.jpg'}
-              className='w-full '
+              src={item?.image || '/no-image.jpg'}
+              className='w-full h-36'
               width={500}
               height={50}
             />

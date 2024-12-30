@@ -31,7 +31,7 @@ const PageProduct = () => {
   }, [product]);
 
   return (
-    <div className='laptop:mx-80'>
+    <div className='min-h-screen'>
       <div className='p-8'>
         <input
           type='text'
@@ -54,7 +54,7 @@ const PageProduct = () => {
             <Image
               alt='image-product-list'
               src={item?.image || '/no-image.jpg'}
-              className='w-full h-36'
+              className='w-full h-48'
               width={500}
               height={50}
             />
